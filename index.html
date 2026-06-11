@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QuizQuest — Aprenda Programação Praticando</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="shortcut icon" href="images/Q.png">
+</head>
+<body>
+
+<div id="success-page">
+  <div class="success-page-inner">
+    <div class="success-page-icon">🎉</div>
+    <h1 class="display success-page-title">Você está na lista!</h1>
+    <p class="success-page-text">
+      Você é um dos primeiros a se inscrever no QuizQuest.<br>
+      Assim que o acesso for liberado, você será um dos primeiros a saber — com condições exclusivas de fundador.
+    </p>
+    <a href="#" class="success-page-back" onclick="showLanding(); return false;">← Voltar para a página</a>
+  </div>
+</div>
+
+<div id="landing-page">
+
+<nav>
+  <a href="#" class="nav-logo">
+    <span class="logo-dot"></span>
+    QuizQuest
+  </a>
+  <span class="nav-badge">Lista de espera aberta</span>
+</nav>
+
+<section id="hero">
+  <div class="container">
+    <div class="eyebrow">
+      <span class="dot"></span>
+      Acesso antecipado disponível
+    </div>
+    <h1 class="display">
+      Aprenda programação<br>
+      <em>como se estivesse jogando</em>
+    </h1>
+    <p class="hero-sub">Resolva desafios diários, ganhe XP e evolua suas habilidades para entrevistas e vagas em tecnologia.</p>
+    <p class="hero-note">Sem aulas de 10 horas. Apenas prática consistente em poucos minutos por dia.</p>
+
+    <div class="form-card">
+      <div id="hero-fields">
+        <div class="form-group">
+          <label for="hero-FNAME">Seu nome</label>
+          <input type="text" id="hero-FNAME" placeholder="Como prefere ser chamado?" autocomplete="given-name">
+        </div>
+        <div class="form-group">
+          <label for="hero-EMAIL">E-mail <span style="color:#FF6B6B">*</span></label>
+          <input type="email" id="hero-EMAIL" placeholder="seu@email.com" autocomplete="email">
+        </div>
+        <button class="btn-primary" id="hero-btn" onclick="subscribe('hero')">Quero acesso antecipado →</button>
+        <p class="form-error" id="hero-error"></p>
+        <p class="form-privacy">Sem spam. Você pode sair da lista quando quiser.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="problema">
+  <div class="container">
+    <h2 class="display">A maioria das pessoas não falha<br>porque não estuda.</h2>
+    <p style="font-size:20px; font-weight:500; color:var(--purple-mid); margin-bottom:32px;">Falha porque não pratica.</p>
+    <ul class="problem-list">
+      <li>Você faz cursos.</li>
+      <li>Assiste vídeos.</li>
+      <li>Aprende os conceitos.</li>
+      <li>E semanas depois, esqueceu quase tudo.</li>
+    </ul>
+    <p class="problem-punch">O problema não é aprender.<br>É transformar conhecimento em habilidade.</p>
+    <p class="problem-bridge" style="margin-top:20px;">E se existisse um jeito diferente de estudar?</p>
+  </div>
+</section>
+
+<section id="solucao">
+  <div class="container">
+    <p class="section-eyebrow">A solução</p>
+    <h2 class="display">Foi por isso que criamos<br>o QuizQuest.</h2>
+    <div class="cards-grid">
+      <div class="feature-card">
+        <div class="feature-icon" style="background:rgba(108,71,255,0.12);">🧠</div>
+        <h3>Desafios rápidos</h3>
+        <p>1 desafio por dia, resolvido em 5 min. Estudos mostram que prática distribuída retém 3× mais que maratonas.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:rgba(245,158,11,0.12);">🔥</div>
+        <h3>Sequência diária</h3>
+        <p>Seu streak cresce a cada dia consecutivo. Perder é fácil — por isso a consistência vira hábito.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:rgba(34,197,94,0.12);">🏆</div>
+        <h3>Sistema de XP</h3>
+        <p>Cada desafio concluído vira experiência real. Você sobe de nível e vê o progresso acontecendo.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:rgba(236,72,153,0.12);">📈</div>
+        <h3>Histórico de evolução</h3>
+        <p>Veja seu percentual de acertos semana a semana. Dados reais, não sensação de progresso.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:rgba(108,71,255,0.12);">🎯</div>
+        <h3>Focado em entrevistas</h3>
+        <p>Questões de lógica, algoritmos e estrutura de dados — os temas que mais aparecem em processos seletivos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="como">
+  <div class="container">
+    <p class="section-eyebrow">Como funciona</p>
+    <h2 class="display">Menos de 10 minutos por dia.</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content"><h4>Acesse a plataforma</h4><p>Pelo celular ou computador. Sem instalação.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content"><h4>Receba seu desafio do dia</h4><p>Uma questão de lógica, algoritmo ou sintaxe — calibrada para o seu nível atual.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content"><h4>Resolva em poucos minutos</h4><p>Sem pressão de tempo. Responda e veja a explicação detalhada da resposta correta.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content"><h4>Ganhe XP e mantenha seu streak</h4><p>Cada acerto vira experiência. Volte amanhã para continuar sua sequência.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-content"><h4>Evolua todos os dias</h4><p>Em 30 dias de prática consistente, a diferença aparece nos seus resultados em entrevistas.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="para-quem">
+  <div class="container">
+    <p class="section-eyebrow">Para quem é</p>
+    <h2 class="display">O QuizQuest é para você que:</h2>
+    <ul class="audience-list">
+      <li>
+        <div class="check-icon">✓</div>
+        <div><div>Aprende melhor praticando do que assistindo aulas</div><div class="audience-desc">Você já sabe que só assistir não basta.</div></div>
+      </li>
+      <li>
+        <div class="check-icon">✓</div>
+        <div><div>Está estudando programação agora</div><div class="audience-desc">Iniciante, intermediário ou avançado — os desafios se adaptam.</div></div>
+      </li>
+      <li>
+        <div class="check-icon">✓</div>
+        <div><div>Quer conseguir sua primeira vaga em tecnologia</div><div class="audience-desc">Questões alinhadas com o que as empresas realmente pedem.</div></div>
+      </li>
+      <li>
+        <div class="check-icon">✓</div>
+        <div><div>Tem pouco tempo — mas quer consistência</div><div class="audience-desc">5 a 10 minutos por dia são suficientes para evoluir.</div></div>
+      </li>
+      <li>
+        <div class="check-icon">✓</div>
+        <div><div>Quer se preparar melhor para entrevistas técnicas</div><div class="audience-desc">Dos algoritmos clássicos às perguntas de raciocínio lógico.</div></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="lista">
+  <div class="container">
+    <p class="section-eyebrow">Lista de espera</p>
+    <h2 class="display">Estamos selecionando<br>os primeiros usuários.</h2>
+    <p style="color:var(--text2); max-width:480px; margin:0 auto;">Os participantes da lista de espera têm acesso antes de todo mundo — e condições que não estarão disponíveis no lançamento público.</p>
+
+    <div class="benefits-grid">
+      <div class="benefit-item"><span class="icon">🚀</span><div><strong>Acesso antecipado</strong>Antes de qualquer outra pessoa.</div></div>
+      <div class="benefit-item"><span class="icon">💰</span><div><strong>Preço de fundador</strong>Condições exclusivas que não voltam.</div></div>
+      <div class="benefit-item"><span class="icon">🧪</span><div><strong>Beta de funcionalidades</strong>Você testa antes do lançamento.</div></div>
+      <div class="benefit-item"><span class="icon">🎙️</span><div><strong>Canal direto</strong>Sua opinião molda o produto.</div></div>
+    </div>
+
+    <div class="form-card" style="text-align:left;">
+      <div id="lista-fields">
+        <div class="form-group">
+          <label for="lista-FNAME">Seu nome</label>
+          <input type="text" id="lista-FNAME" placeholder="Como prefere ser chamado?" autocomplete="given-name">
+        </div>
+        <div class="form-group">
+          <label for="lista-EMAIL">E-mail <span style="color:#FF6B6B">*</span></label>
+          <input type="email" id="lista-EMAIL" placeholder="seu@email.com" autocomplete="email">
+        </div>
+        <button class="btn-primary" id="lista-btn" onclick="subscribe('lista')">Quero acesso antecipado →</button>
+        <p class="form-error" id="lista-error"></p>
+        <p class="form-privacy">Sem spam. Saia quando quiser.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container">
+    <p class="section-eyebrow">Perguntas frequentes</p>
+    <h2 class="display">Ficou alguma dúvida?</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">O QuizQuest já está disponível?<span class="faq-toggle">+</span></div>
+        <div class="faq-a">Ainda não. Estamos finalizando os últimos detalhes e liberaremos o acesso primeiro para quem estiver na lista de espera. Ao se inscrever agora, você garante sua vaga antes do lançamento público.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Preciso saber programar para usar?<span class="faq-toggle">+</span></div>
+        <div class="faq-a">Não. Os desafios são calibrados por nível — iniciantes recebem questões de lógica e sintaxe básica, enquanto quem já programa encontra desafios de algoritmos e estruturas de dados. O objetivo é que todos evoluam a partir de onde estão.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Quais linguagens estarão disponíveis?<span class="faq-toggle">+</span></div>
+        <div class="faq-a">No lançamento: JavaScript. Nos meses seguintes: TypeScript, Node.js, SQL e ReactJS. Podendo mudar com base nas linguagens mais pedidas pelos usuários para ocupar vagas no mercado.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Quanto vai custar?<span class="faq-toggle">+</span></div>
+        <div class="faq-a">Quem está na lista de espera será o primeiro a conhecer os planos — e terá acesso a condições de fundador que não estarão disponíveis após o lançamento público. Não vai se arrepender de entrar cedo.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Posso sair da lista de espera?<span class="faq-toggle">+</span></div>
+        <div class="faq-a">Sim, quando quiser. Basta clicar em "cancelar inscrição" no e-mail que você vai receber. Sem burocracia.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 QuizQuest</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
