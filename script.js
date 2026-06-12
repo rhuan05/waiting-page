@@ -18,19 +18,6 @@ function showSuccess() {
     window.scrollTo({ top: 0, behavior: 'instant' });
 }
 
-function showLanding() {
-    const btn = document.getElementById('hero-btn');
-    document.getElementById('success-page').classList.remove('visible');
-    document.getElementById('landing-page').style.display = 'block';
-    document.getElementById('hero-EMAIL').value = '';
-    document.getElementById('hero-FNAME').value = '';
-    document.getElementById('lista-EMAIL').value = '';
-    document.getElementById('lista-FNAME').value = '';
-    btn.disabled = false;
-    btn.textContent = 'Quero acesso antecipado →';
-    window.scrollTo({ top: 0, behavior: 'instant' });
-}
-
 function subscribe(formId) {
     const email = document.getElementById(formId + '-EMAIL').value.trim();
     const nome = document.getElementById(formId + '-FNAME').value.trim();
